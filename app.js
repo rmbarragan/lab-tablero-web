@@ -1,7 +1,7 @@
 const TAREAS = [
   { texto: "Clonar el repositorio", hecha: true },
   { texto: "Crear una rama", hecha: false },
-  { texto: "Abrir un Pull Request", hecha: false },
+  { texto: "Abrir un Pull Request", hecha: false }, // Este es un suggested change 
 ];
 
 function actualizarContador() {
