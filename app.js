@@ -1,12 +1,20 @@
 const TAREAS = [ 
   { texto: "Clonar el repositorio", hecha: true },
   { texto: "Crear una rama", hecha: false },
-  { texto: "Abrir un Pull Request", hecha: false },
+  { texto: "Abrir un Pull Request", hecha: false }, // Este es un suggested change 
 ];
+
 
 function mostrarEstadoVacio() {
   const aviso = document.querySelector("#vacio");
   aviso.hidden = TAREAS.length > 0;
+}
+
+function actualizarContador() {
+  const pendientes = TAREAS.filter(function (t) {
+    return !t.hecha;
+  }).length; //suggestion 2
+  document.querySelector("#contador").textContent = pendientes + " pendientes";
 }
 
 function render() {
@@ -18,8 +26,11 @@ function render() {
     li.textContent = t.texto;
     lista.appendChild(li);
   });
+
   
   mostrarEstadoVacio();
+
+  actualizarContador();
 }
 
 render();
